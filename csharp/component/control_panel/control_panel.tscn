@@ -1,0 +1,59 @@
+[gd_scene load_steps=2 format=3 uid="uid://cxleweb5yv671"]
+
+[ext_resource type="Script" uid="uid://bf28viaf1kcal" path="res://component/control_panel/ControlPanel.cs" id="1_62jid"]
+
+[node name="ControlPanel" type="CanvasLayer" node_paths=PackedStringArray("FpsLabel", "EnemyCountLabel", "SpawnEnemyButton", "SpawnEnemyX10Button", "SpawnEnemyX100Button")]
+script = ExtResource("1_62jid")
+FpsLabel = NodePath("Panel/MarginContainer/VBoxContainer/FpsLabel")
+EnemyCountLabel = NodePath("Panel/MarginContainer/VBoxContainer/EnemyCountLabel")
+SpawnEnemyButton = NodePath("Panel/MarginContainer/VBoxContainer/SpawnEnemyButton")
+SpawnEnemyX10Button = NodePath("Panel/MarginContainer/VBoxContainer/SpawnEnemyX10Button")
+SpawnEnemyX100Button = NodePath("Panel/MarginContainer/VBoxContainer/SpawnEnemyX100Button")
+
+[node name="Panel" type="Panel" parent="."]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -184.0
+offset_top = -180.0
+offset_right = -8.0
+offset_bottom = -12.0
+grow_horizontal = 0
+grow_vertical = 0
+
+[node name="MarginContainer" type="MarginContainer" parent="Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 4
+theme_override_constants/margin_top = 4
+theme_override_constants/margin_right = 4
+theme_override_constants/margin_bottom = 4
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel/MarginContainer"]
+layout_mode = 2
+
+[node name="FpsLabel" type="Label" parent="Panel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "FPS: 60"
+
+[node name="EnemyCountLabel" type="Label" parent="Panel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Enemy Count: 100"
+
+[node name="SpawnEnemyButton" type="Button" parent="Panel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Spawn Enemy"
+
+[node name="SpawnEnemyX10Button" type="Button" parent="Panel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Spawn Enemy X10"
+
+[node name="SpawnEnemyX100Button" type="Button" parent="Panel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Spawn Enemy X100"

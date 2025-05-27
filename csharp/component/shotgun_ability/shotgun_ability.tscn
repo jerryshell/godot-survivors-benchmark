@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://dd8poe5y4ykq0"]
+
+[ext_resource type="Script" uid="uid://bl08syg112bu0" path="res://component/shotgun_ability/ShotgunAbility.cs" id="1_3lf7m"]
+[ext_resource type="PackedScene" uid="uid://cxpt1grsiggy" path="res://component/bullet/bullet.tscn" id="2_1qrkl"]
+
+[node name="ShotgunAbility" type="Node" node_paths=PackedStringArray("AttackTimer")]
+script = ExtResource("1_3lf7m")
+BulletScene = ExtResource("2_1qrkl")
+AttackTimer = NodePath("AttackTimer")
+
+[node name="AttackTimer" type="Timer" parent="."]
+wait_time = 0.4
+autostart = true

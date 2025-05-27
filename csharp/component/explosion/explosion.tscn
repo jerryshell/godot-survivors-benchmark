@@ -1,0 +1,55 @@
+[gd_scene load_steps=10 format=3 uid="uid://binuybywyjd8n"]
+
+[ext_resource type="Texture2D" uid="uid://djqguw3eh1s2j" path="res://asset/image/red.png" id="1_cspj3"]
+[ext_resource type="Script" uid="uid://bube016vuom06" path="res://component/explosion/Explosion.cs" id="1_upboq"]
+
+[sub_resource type="Curve" id="Curve_s1ofd"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_ygtif"]
+curve = SubResource("Curve_s1ofd")
+
+[sub_resource type="Curve" id="Curve_upboq"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.8, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_s1ofd"]
+curve = SubResource("Curve_upboq")
+
+[sub_resource type="Curve" id="Curve_cspj3"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_upboq"]
+curve = SubResource("Curve_cspj3")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_ygtif"]
+particle_flag_disable_z = true
+angle_min = 720.0
+angle_max = 720.0
+spread = 180.0
+angular_velocity_min = -720.0
+angular_velocity_max = 720.0
+radial_velocity_min = 150.0
+radial_velocity_max = 150.0
+radial_velocity_curve = SubResource("CurveTexture_s1ofd")
+gravity = Vector3(0, 0, 0)
+scale_curve = SubResource("CurveTexture_upboq")
+alpha_curve = SubResource("CurveTexture_ygtif")
+
+[node name="Explosion" type="Node2D" node_paths=PackedStringArray("Particles")]
+script = ExtResource("1_upboq")
+Particles = NodePath("GPUParticles")
+
+[node name="GPUParticles" type="GPUParticles2D" parent="."]
+scale = Vector2(0.5, 0.5)
+emitting = false
+amount = 10
+texture = ExtResource("1_cspj3")
+lifetime = 0.4
+one_shot = true
+explosiveness = 1.0
+fixed_fps = 0
+interpolate = false
+process_material = SubResource("ParticleProcessMaterial_ygtif")
