@@ -2,6 +2,8 @@
 
 Executable file download: https://github.com/jerryshell/godot-survivors-benchmark/releases
 
+Reddit discussion: https://www.reddit.com/r/godot/comments/1kwrzvr/i_wrote_3_prototypes_for_performance_comparison/
+
 - I wrote several survivors-like prototypes for performance comparison: GDScript, C#, Rust
 - Player and enemies are CharacterBody2D, bullets are Area2D
 - Logic code is NOT optimized (such as frame skipping, object pooling, multithreading, etc.)
